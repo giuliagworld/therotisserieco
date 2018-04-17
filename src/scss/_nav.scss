@@ -50,7 +50,7 @@
 .bm-menu {
   background: #373a47;
   padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  font-size: 1.30em;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -62,6 +62,12 @@
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  .menu-item {
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 600;
+    color: $white;
+  }
 }
 
 /* Styling of overlay */

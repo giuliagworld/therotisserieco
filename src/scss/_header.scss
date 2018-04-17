@@ -8,8 +8,13 @@
   background-size: auto;
   color: $white;
   @include media-breakpoint-up(md) {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 102px;
     background-size: cover;
+  }
+  .container-fluid {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
   }
 }

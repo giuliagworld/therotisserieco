@@ -1147,12 +1147,15 @@ body {
 .white {
   color: white; }
 
-.dark-turquoise {
-  color: #6ccf97; }
+.link-default {
+  text-decoration: none; }
 
 .box-small {
   padding-top: 25px;
   padding-bottom: 25px; }
+
+.tile {
+  position: unset !important; }
 
 .header {
   width: 100%;
@@ -1165,9 +1168,13 @@ body {
   color: white; }
   @media (min-width: 768px) {
     .header {
-      padding-top: 100px;
-      padding-bottom: 100px;
+      padding-top: 102px;
       background-size: cover; } }
+  .header .container-fluid {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center; }
 
 /* Position and style for nav banner */
 .nav-container {
@@ -1216,7 +1223,7 @@ body {
 .bm-menu {
   background: #373a47;
   padding: 2.5em 1.5em 0;
-  font-size: 1.15em; }
+  font-size: 1.30em; }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
@@ -1226,6 +1233,11 @@ body {
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em; }
+  .bm-item-list .menu-item {
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 600;
+    color: white; }
 
 /* Styling of overlay */
 .bm-overlay {

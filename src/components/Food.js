@@ -2,17 +2,16 @@ import React from 'react';
 import createReactClass from "create-react-class";
 import PropTypes from 'prop-types';
 
-function Header(props) {
+function Food(props) {
   return (
-    <section className="header">
+    <section className="food">
       <div className="container-fluid">
         <div className="container">
-          <h1 className="heading-1">The Rotisserie Company</h1>
-          <h2 className="heading-2">Private &amp; Corporate Catering</h2>
+          <h1 className="heading-1">Our Food</h1>
         </div>
       </div>
     </section>
   )
 }
 
-export default Header;
+export default Food;
