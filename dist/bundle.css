@@ -1155,26 +1155,7 @@ body {
   padding-bottom: 25px; }
 
 .tile {
-  position: unset !important; }
-
-.header {
-  width: 100%;
-  height: 100vh;
-  padding-top: 62px;
-  padding-bottom: 62px;
-  background-image: url("/assets/header.jpg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  color: white; }
-  @media (min-width: 768px) {
-    .header {
-      padding-top: 102px;
-      background-size: cover; } }
-  .header .container-fluid {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center; }
+  z-index: -1; }
 
 /* Position and style for nav banner */
 .nav-container {
@@ -1182,7 +1163,6 @@ body {
   top: 0;
   width: 100%;
   height: 62px;
-  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.3);
   background-image: url("/assets/chicken.svg");
   background-repeat: no-repeat;
@@ -1242,5 +1222,30 @@ body {
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3); }
+
+.header {
+  width: 100%;
+  height: 100vh;
+  padding-top: 62px;
+  padding-bottom: 62px;
+  background-image: url("/assets/header.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  color: white; }
+  @media (min-width: 768px) {
+    .header {
+      padding-top: 102px;
+      background-size: cover; } }
+  .header .container-fluid {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center; }
+
+.food {
+  width: 100%; }
+
+.slideshow {
+  width: 100%; }
 
 /*# sourceMappingURL=bundle.css.map*/

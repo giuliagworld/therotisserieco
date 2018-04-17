@@ -10,7 +10,7 @@ function SlideShow(props) {
     <section className="slideshow">
       <div className="container-fluid">
         <div className="container">
-          <Gallery images={IMAGES} enableImageSelection={false} />
+          <Gallery images={IMAGES} enableImageSelection={false} enableLightbox={false} />
         </div>
       </div>
     </section>
