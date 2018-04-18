@@ -5,7 +5,7 @@ function Footer(props) {
     <section className="footer">
       <div className="container-fluid">
         <div className="container box-small">
-          <h3 className="heading-3 white">Copyright &copy; The Rotisserie Company</h3>
+          <p className="body-3 white">Copyright &copy; 2018 The Rotisserie&amp;Co</p>
         </div>
       </div>
     </section>

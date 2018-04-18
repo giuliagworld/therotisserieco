@@ -27702,7 +27702,39 @@ function Contact(props) {
     className: "container"
   }, _react.default.createElement("h2", {
     className: "heading-2"
-  }, "Contact"))));
+  }, "Contact"), _react.default.createElement("div", {
+    className: "row"
+  }, _react.default.createElement("div", {
+    className: "col-xs-12 col-md-6 contact-container"
+  }, _react.default.createElement("a", {
+    className: "contact-details email",
+    role: "button",
+    href: "mailto:test@bla.com"
+  }, "test@bla.com"), _react.default.createElement("br", null), _react.default.createElement("a", {
+    className: "contact-details phone",
+    role: "button",
+    href: "tel:+441234567890"
+  }, "01234567890")), _react.default.createElement("div", {
+    className: "col-xs-12 col-md-6 social-container"
+  }, _react.default.createElement("a", {
+    className: "social",
+    href: "https://www.facebook.com/"
+  }, _react.default.createElement("img", {
+    className: "icon",
+    src: "./assets/facebook.svg"
+  })), _react.default.createElement("a", {
+    className: "social",
+    href: "https://twitter.com/"
+  }, _react.default.createElement("img", {
+    className: "icon",
+    src: "./assets/twitter.svg"
+  })), _react.default.createElement("a", {
+    className: "social",
+    href: "https://www.instagram.com/"
+  }, _react.default.createElement("img", {
+    className: "icon",
+    src: "./assets/instagram.svg"
+  })))))));
 }
 
 var _default = Contact;
@@ -27782,9 +27814,9 @@ function Footer(props) {
     className: "container-fluid"
   }, _react.default.createElement("div", {
     className: "container box-small"
-  }, _react.default.createElement("h3", {
-    className: "heading-3 white"
-  }, "Copyright \xA9 The Rotisserie Company"))));
+  }, _react.default.createElement("p", {
+    className: "body-3 white"
+  }, "Copyright \xA9 2018 The Rotisserie&Co"))));
 }
 
 var _default = Footer;
@@ -28229,6 +28261,28 @@ module.exports = __webpack_require__.p + "/assets/ciabatta.jpg";
 
 /***/ }),
 
+/***/ "./src/img/envelope.svg":
+/*!******************************!*\
+  !*** ./src/img/envelope.svg ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/envelope.svg";
+
+/***/ }),
+
+/***/ "./src/img/facebook.svg":
+/*!******************************!*\
+  !*** ./src/img/facebook.svg ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/facebook.svg";
+
+/***/ }),
+
 /***/ "./src/img/header.jpg":
 /*!****************************!*\
   !*** ./src/img/header.jpg ***!
@@ -28237,6 +28291,28 @@ module.exports = __webpack_require__.p + "/assets/ciabatta.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/assets/header.jpg";
+
+/***/ }),
+
+/***/ "./src/img/instagram.svg":
+/*!*******************************!*\
+  !*** ./src/img/instagram.svg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/instagram.svg";
+
+/***/ }),
+
+/***/ "./src/img/phone.svg":
+/*!***************************!*\
+  !*** ./src/img/phone.svg ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/phone.svg";
 
 /***/ }),
 
@@ -28281,6 +28357,17 @@ module.exports = __webpack_require__.p + "/assets/sauces.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/assets/therotisserieco-logo.jpg";
+
+/***/ }),
+
+/***/ "./src/img/twitter.svg":
+/*!*****************************!*\
+  !*** ./src/img/twitter.svg ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/twitter.svg";
 
 /***/ }),
 
@@ -28334,6 +28421,16 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./img/calendar.sv
 var _briefcase = _interopRequireDefault(__webpack_require__(/*! ./img/briefcase.svg */ "./src/img/briefcase.svg"));
 
 var _sauces = _interopRequireDefault(__webpack_require__(/*! ./img/sauces.jpg */ "./src/img/sauces.jpg"));
+
+var _envelope = _interopRequireDefault(__webpack_require__(/*! ./img/envelope.svg */ "./src/img/envelope.svg"));
+
+var _phone = _interopRequireDefault(__webpack_require__(/*! ./img/phone.svg */ "./src/img/phone.svg"));
+
+var _facebook = _interopRequireDefault(__webpack_require__(/*! ./img/facebook.svg */ "./src/img/facebook.svg"));
+
+var _twitter = _interopRequireDefault(__webpack_require__(/*! ./img/twitter.svg */ "./src/img/twitter.svg"));
+
+var _instagram = _interopRequireDefault(__webpack_require__(/*! ./img/instagram.svg */ "./src/img/instagram.svg"));
 
 var _Food = _interopRequireDefault(__webpack_require__(/*! ./data/Food */ "./src/data/Food.js"));
 

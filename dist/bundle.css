@@ -1117,6 +1117,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   text-align: center;
   color: black; }
 
@@ -1255,7 +1256,7 @@ body {
     z-index: -1; }
     .food .item .image-container {
       width: 200px;
-      height: 185px;
+      height: 200px;
       margin: 0 auto;
       border-radius: 50%;
       -webkit-box-shadow: 0 1px 14px 4px rgba(0, 0, 0, 0.4);
@@ -1333,12 +1334,44 @@ body {
   width: 100%; }
 
 .contact {
-  clear: both; }
+  clear: both;
+  width: 100%;
+  overflow: auto; }
   .contact .container-fluid {
-    height: 400px;
     padding: 100px 0;
     background-color: #242323;
     color: white; }
+  .contact .contact-container {
+    margin-top: 15px; }
+    @media (min-width: 768px) {
+      .contact .contact-container {
+        margin-top: 40px; } }
+    .contact .contact-container .contact-details {
+      display: inline-block;
+      padding: 10px 0 10px 40px;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: 30px;
+      font-size: 22px;
+      text-decoration: none;
+      color: white; }
+      .contact .contact-container .contact-details.email {
+        background-image: url("/assets/envelope.svg"); }
+      .contact .contact-container .contact-details.phone {
+        background-image: url("/assets/phone.svg"); }
+  @media (min-width: 768px) {
+    .contact .social-container {
+      margin-top: 45px; } }
+  .contact .social-container .social {
+    display: inline-block;
+    padding-top: 40px; }
+    @media (min-width: 768px) {
+      .contact .social-container .social {
+        padding-top: 15px; } }
+    .contact .social-container .social .icon {
+      margin: 0 10px;
+      width: 60px;
+      height: auto; }
 
 .footer {
   width: 100%; }

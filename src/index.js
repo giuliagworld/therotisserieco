@@ -16,6 +16,12 @@ import Utensils from './img/utensils.svg';
 import Calendar from './img/calendar.svg';
 import Briefcase from './img/briefcase.svg';
 import Sauces from './img/sauces.jpg';
+import Envelope from './img/envelope.svg';
+import Phone from './img/phone.svg';
+import Facebook from './img/facebook.svg';
+import Twitter from './img/twitter.svg';
+import Instagram from './img/instagram.svg';
+
 
 
 // Data
