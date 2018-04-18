@@ -27580,6 +27580,8 @@ var _Photos = _interopRequireDefault(__webpack_require__(/*! ./Photos */ "./src/
 
 var _Contact = _interopRequireDefault(__webpack_require__(/*! ./Contact */ "./src/components/Contact.js"));
 
+var _Footer = _interopRequireDefault(__webpack_require__(/*! ./Footer */ "./src/components/Footer.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = (0, _createReactClass.default)({
@@ -27664,7 +27666,7 @@ var App = (0, _createReactClass.default)({
         description: service.description,
         key: service.id
       });
-    }.bind(this)))))), _react.default.createElement(_Photos.default, null), _react.default.createElement(_Contact.default, null));
+    }.bind(this)))))), _react.default.createElement(_Photos.default, null), _react.default.createElement(_Contact.default, null), _react.default.createElement(_Footer.default, null));
   }
 });
 var _default = App;
@@ -27698,13 +27700,9 @@ function Contact(props) {
     className: "container-fluid"
   }, _react.default.createElement("div", {
     className: "container"
-  }, _react.default.createElement("div", {
-    className: "contact-content"
   }, _react.default.createElement("h2", {
     className: "heading-2"
-  }, "Contact"), _react.default.createElement("p", {
-    className: "body-1"
-  }, "IT STARTED, QUITE SIMPLY, LIKE THIS as a family run business and now we have established ourselves in the market and serve hundreds of delicious chickens!")))));
+  }, "Contact"))));
 }
 
 var _default = Contact;
@@ -27754,6 +27752,42 @@ function Food(props) {
 }
 
 var _default = Food;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/components/Footer.js":
+/*!**********************************!*\
+  !*** ./src/components/Footer.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Footer(props) {
+  return _react.default.createElement("section", {
+    className: "footer"
+  }, _react.default.createElement("div", {
+    className: "container-fluid"
+  }, _react.default.createElement("div", {
+    className: "container box-small"
+  }, _react.default.createElement("h3", {
+    className: "heading-3 white"
+  }, "Copyright \xA9 The Rotisserie Company"))));
+}
+
+var _default = Footer;
 exports.default = _default;
 
 /***/ }),

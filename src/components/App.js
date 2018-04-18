@@ -9,6 +9,7 @@ import Story from './Story';
 import Service from './Service';
 import Photos from './Photos';
 import Contact from './Contact';
+import Footer from './Footer';
 
 const App = createReactClass({
   propTypes: {
@@ -77,6 +78,7 @@ const App = createReactClass({
         </section>
         <Photos />
         <Contact />
+        <Footer />
       </div>
     )
   }
