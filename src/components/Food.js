@@ -1,16 +1,21 @@
 import React from 'react';
-import createReactClass from "create-react-class";
 import PropTypes from 'prop-types';
+
+Food.propTypes = {
+  src: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+}
 
 function Food(props) {
   return (
-    <section className="food">
-      <div className="container-fluid">
-        <div className="container">
-          <h1 className="heading-1">Our Food</h1>
-        </div>
+    <div className="col-xs-12 col-md-4 item">
+      <div className="image-container">
+        <img className="image" src={props.src} />
       </div>
-    </section>
+      <div className="name-container">
+        <h3 className="heading-3 name">{props.name}</h3>
+      </div>
+    </div>
   )
 }
 

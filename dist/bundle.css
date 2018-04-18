@@ -1163,7 +1163,7 @@ body {
   top: 0;
   width: 100%;
   height: 62px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   background-image: url("/assets/chicken.svg");
   background-repeat: no-repeat;
   background-size: 52px;
@@ -1243,9 +1243,129 @@ body {
     justify-content: center; }
 
 .food {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 100%;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .food {
+      padding-top: 100px;
+      padding-bottom: 100px; } }
+  .food .item {
+    z-index: -1; }
+    .food .item .image-container {
+      width: 200px;
+      height: 185px;
+      margin: 0 auto;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 1px 14px 4px rgba(0, 0, 0, 0.4);
+      /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow: 0 1px 14px 4px rgba(0, 0, 0, 0.4);
+      /* Firefox 3.5 - 3.6 */
+      box-shadow: 0 1px 14px 4px rgba(0, 0, 0, 0.4); }
+      .food .item .image-container .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%; }
+    .food .item .name-container {
+      color: black; }
+
+.story {
+  width: 100%;
+  text-align: left; }
+  .story .container-fluid {
+    position: relative;
+    background-image: url("/assets/carrot-salad.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 500px;
+    z-index: -1; }
+    @media (min-width: 768px) {
+      .story .container-fluid {
+        height: 500px; } }
+  .story .story-content {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    color: black; }
+    @media (min-width: 768px) {
+      .story .story-content {
+        left: 100px;
+        width: 568px; } }
+    @media (min-width: 992px) {
+      .story .story-content {
+        left: 200px;
+        width: 600px; } }
+
+.services {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  @media (min-width: 768px) {
+    .services {
+      padding-top: 100px;
+      padding-bottom: 100px; } }
+  .services .item-container {
+    z-index: -1; }
+    .services .item-container .item {
+      margin: 10px 0;
+      padding: 30px 20px 20px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+      /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+      /* Firefox 3.5 - 3.6 */
+      box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.4); }
+      @media (min-width: 992px) {
+        .services .item-container .item {
+          min-height: 355px; } }
+      .services .item-container .item .image-container .image {
+        width: 40px; }
+
+.photos {
   width: 100%; }
 
-.slideshow {
-  width: 100%; }
+.contact {
+  clear: both;
+  padding: 100px 0;
+  width: 100%;
+  text-align: right; }
+  .contact .container-fluid {
+    position: relative;
+    background-image: url("/assets/sauces.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 500px;
+    z-index: -1; }
+    @media (min-width: 768px) {
+      .contact .container-fluid {
+        height: 500px; } }
+  .contact .contact-content {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    color: black; }
+    @media (min-width: 768px) {
+      .contact .contact-content {
+        right: 100px;
+        width: 568px; } }
+    @media (min-width: 992px) {
+      .contact .contact-content {
+        right: 200px;
+        width: 600px; } }
 
 /*# sourceMappingURL=bundle.css.map*/

@@ -1,3 +1,31 @@
 .food {
+  padding-top: 40px;
+  padding-bottom: 40px;
   width: 100%;
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .item {
+    z-index: -1;
+    .image-container {
+      width: 200px;
+      height: 185px;
+      margin: 0 auto;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 1px 14px 4px rgba(0, 0, 0, 0.4);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+      -moz-box-shadow:    0 1px 14px 4px rgba(0, 0, 0, 0.4);  /* Firefox 3.5 - 3.6 */
+      box-shadow:         0 1px 14px 4px rgba(0, 0, 0, 0.4);
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+    .name-container {
+      color: $black;
+    }
+  }
 }

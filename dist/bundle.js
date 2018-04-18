@@ -27572,14 +27572,39 @@ var _Header = _interopRequireDefault(__webpack_require__(/*! ./Header */ "./src/
 
 var _Food = _interopRequireDefault(__webpack_require__(/*! ./Food */ "./src/components/Food.js"));
 
-var _SlideShow = _interopRequireDefault(__webpack_require__(/*! ./SlideShow */ "./src/components/SlideShow.js"));
+var _Story = _interopRequireDefault(__webpack_require__(/*! ./Story */ "./src/components/Story.js"));
+
+var _Service = _interopRequireDefault(__webpack_require__(/*! ./Service */ "./src/components/Service.js"));
+
+var _Photos = _interopRequireDefault(__webpack_require__(/*! ./Photos */ "./src/components/Photos.js"));
+
+var _Contact = _interopRequireDefault(__webpack_require__(/*! ./Contact */ "./src/components/Contact.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = (0, _createReactClass.default)({
   displayName: "App",
+  propTypes: {
+    initialFood: _propTypes.default.arrayOf(_propTypes.default.shape({
+      src: _propTypes.default.string.isRequired,
+      name: _propTypes.default.string.isRequired,
+      id: _propTypes.default.number.isRequired
+    })).isRequired,
+    initialServices: _propTypes.default.arrayOf(_propTypes.default.shape({
+      src: _propTypes.default.string.isRequired,
+      name: _propTypes.default.string.isRequired,
+      description: _propTypes.default.string.isRequired,
+      id: _propTypes.default.number.isRequired
+    })).isRequired
+  },
   showSettings: function showSettings(event) {
     event.preventDefault();
+  },
+  getInitialState: function getInitialState() {
+    return {
+      menu: this.props.initialFood,
+      services: this.props.initialServices
+    };
   },
   render: function render() {
     return _react.default.createElement("div", null, _react.default.createElement("div", {
@@ -27599,17 +27624,90 @@ var App = (0, _createReactClass.default)({
       className: "menu-item link-default",
       href: "/services"
     }, "Services"), _react.default.createElement("a", {
-      id: "gallery",
+      id: "photos",
       className: "menu-item link-default",
-      href: "/gallery"
-    }, "Gallery"), _react.default.createElement("a", {
+      href: "/photos"
+    }, "Photos"), _react.default.createElement("a", {
       id: "contact",
       className: "menu-item link-default",
       href: "/contact"
-    }, "Contact"))), _react.default.createElement(_Header.default, null), _react.default.createElement(_Food.default, null), _react.default.createElement(_SlideShow.default, null));
+    }, "Contact"))), _react.default.createElement(_Header.default, null), _react.default.createElement("section", {
+      className: "food"
+    }, _react.default.createElement("div", {
+      className: "container-fluid"
+    }, _react.default.createElement("div", {
+      className: "container"
+    }, _react.default.createElement("h2", {
+      className: "heading-2"
+    }, "Our Food"), _react.default.createElement("div", {
+      className: "row box-small"
+    }, this.state.menu.map(function (food, index) {
+      return _react.default.createElement(_Food.default, {
+        src: food.src,
+        name: food.name,
+        key: food.id
+      });
+    }.bind(this)))))), _react.default.createElement(_Story.default, null), _react.default.createElement("section", {
+      className: "services"
+    }, _react.default.createElement("div", {
+      className: "container-fluid"
+    }, _react.default.createElement("div", {
+      className: "container"
+    }, _react.default.createElement("h2", {
+      className: "heading-2"
+    }, "Our Services"), _react.default.createElement("div", {
+      className: "row"
+    }, this.state.services.map(function (service, index) {
+      return _react.default.createElement(_Service.default, {
+        src: service.src,
+        name: service.name,
+        description: service.description,
+        key: service.id
+      });
+    }.bind(this)))))), _react.default.createElement(_Photos.default, null), _react.default.createElement(_Contact.default, null));
   }
 });
 var _default = App;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/components/Contact.js":
+/*!***********************************!*\
+  !*** ./src/components/Contact.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Contact(props) {
+  return _react.default.createElement("section", {
+    className: "contact"
+  }, _react.default.createElement("div", {
+    className: "container-fluid"
+  }, _react.default.createElement("div", {
+    className: "container"
+  }, _react.default.createElement("div", {
+    className: "contact-content"
+  }, _react.default.createElement("h2", {
+    className: "heading-2"
+  }, "Contact"), _react.default.createElement("p", {
+    className: "body-1"
+  }, "IT STARTED, QUITE SIMPLY, LIKE THIS as a family run business and now we have established ourselves in the market and serve hundreds of delicious chickens!")))));
+}
+
+var _default = Contact;
 exports.default = _default;
 
 /***/ }),
@@ -27631,22 +27729,28 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var _createReactClass = _interopRequireDefault(__webpack_require__(/*! create-react-class */ "./node_modules/create-react-class/index.js"));
-
 var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+Food.propTypes = {
+  src: _propTypes.default.string.isRequired,
+  name: _propTypes.default.string.isRequired
+};
+
 function Food(props) {
-  return _react.default.createElement("section", {
-    className: "food"
+  return _react.default.createElement("div", {
+    className: "col-xs-12 col-md-4 item"
   }, _react.default.createElement("div", {
-    className: "container-fluid"
-  }, _react.default.createElement("div", {
-    className: "container"
-  }, _react.default.createElement("h1", {
-    className: "heading-1"
-  }, "Our Food"))));
+    className: "image-container"
+  }, _react.default.createElement("img", {
+    className: "image",
+    src: props.src
+  })), _react.default.createElement("div", {
+    className: "name-container"
+  }, _react.default.createElement("h3", {
+    className: "heading-3 name"
+  }, props.name)));
 }
 
 var _default = Food;
@@ -27671,10 +27775,6 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var _createReactClass = _interopRequireDefault(__webpack_require__(/*! create-react-class */ "./node_modules/create-react-class/index.js"));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Header(props) {
@@ -27696,174 +27796,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./src/components/PhotoSet.js":
-/*!************************************!*\
-  !*** ./src/components/PhotoSet.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var IMAGES = [{
-  src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 174,
-  caption: "After Rain (Jeshu John - designerspics.com)"
-}, {
-  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-  caption: "Boats (Jeshu John - designerspics.com)"
-}, {
-  src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-  thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 212,
-  caption: "Color Pencils (Jeshu John - designerspics.com)"
-}, {
-  src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg",
-  thumbnail: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Red Apples with other Red Fruit (foodiesfeed.com)"
-}, {
-  src: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
-  thumbnail: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 183,
-  caption: "37H (gratispgraphy.com)"
-}, {
-  src: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_b.jpg",
-  thumbnail: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_n.jpg",
-  thumbnailWidth: 240,
-  thumbnailHeight: 320,
-  caption: "8H (gratisography.com)"
-}, {
-  src: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
-  thumbnail: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 190,
-  caption: "286H (gratisography.com)"
-}, {
-  src: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg",
-  thumbnail: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 148,
-  caption: "315H (gratisography.com)"
-}, {
-  src: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg",
-  thumbnail: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "201H (gratisography.com)"
-}, {
-  src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_n.jpg",
-  thumbnailWidth: 248,
-  thumbnailHeight: 320,
-  caption: "Big Ben (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_b.jpg",
-  thumbnail: "https://c7.staticflickr.com/9/8785/28687743710_3580fcb5f0_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 113,
-  caption: "Red Zone - Paris (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg",
-  thumbnail: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_n.jpg",
-  thumbnailWidth: 313,
-  thumbnailHeight: 320,
-  caption: "Wood Glass (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg",
-  thumbnail: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Flower Interior Macro (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_b.jpg",
-  thumbnail: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 194,
-  caption: "Old Barn (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c2.staticflickr.com/8/7577/28973580825_d8f541ba3f_b.jpg",
-  thumbnail: "https://c2.staticflickr.com/8/7577/28973580825_d8f541ba3f_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Cosmos Flower Macro (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg",
-  thumbnail: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_n.jpg",
-  thumbnailWidth: 271,
-  thumbnailHeight: 320,
-  caption: "Orange Macro (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_b.jpg",
-  thumbnail: "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Surfer Sunset (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_b.jpg",
-  thumbnail: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Man on BMX (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_b.jpg",
-  thumbnail: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Ropeman - Thailand (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_b.jpg",
-  thumbnail: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 213,
-  caption: "Time to Think (Tom Eversley - isorepublic.com)"
-}, {
-  src: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_b.jpg",
-  thumbnail: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 179,
-  caption: "Untitled (Jan Vasek - jeshoots.com)"
-}, {
-  src: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_b.jpg",
-  thumbnail: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_n.jpg",
-  thumbnailWidth: 320,
-  thumbnailHeight: 215,
-  caption: "Untitled (moveast.me)"
-}, {
-  src: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_b.jpg",
-  thumbnail: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_n.jpg",
-  thumbnailWidth: 257,
-  thumbnailHeight: 320,
-  caption: "A photo by 贝莉儿 NG. (unsplash.com)"
-}, {
-  src: "https://c7.staticflickr.com/9/8824/28868764222_19f3b30773_b.jpg",
-  thumbnail: "https://c7.staticflickr.com/9/8824/28868764222_19f3b30773_n.jpg",
-  thumbnailWidth: 226,
-  thumbnailHeight: 320,
-  caption: "A photo by Matthew Wiebe. (unsplash.com)"
-}];
-var _default = IMAGES;
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./src/components/SlideShow.js":
-/*!*************************************!*\
-  !*** ./src/components/SlideShow.js ***!
-  \*************************************/
+/***/ "./src/components/Photos.js":
+/*!**********************************!*\
+  !*** ./src/components/Photos.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27877,34 +27813,363 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-var _createReactClass = _interopRequireDefault(__webpack_require__(/*! create-react-class */ "./node_modules/create-react-class/index.js"));
-
-var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
-
-var _slide = _interopRequireDefault(__webpack_require__(/*! react-burger-menu/lib/menus/slide */ "./node_modules/react-burger-menu/lib/menus/slide.js"));
-
 var _reactGridGallery = _interopRequireDefault(__webpack_require__(/*! react-grid-gallery */ "./node_modules/react-grid-gallery/lib/Gallery.js"));
 
-var _PhotoSet = _interopRequireDefault(__webpack_require__(/*! ./PhotoSet */ "./src/components/PhotoSet.js"));
+var _Gallery = _interopRequireDefault(__webpack_require__(/*! ../data/Gallery */ "./src/data/Gallery.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function SlideShow(props) {
+function Photos(props) {
   return _react.default.createElement("section", {
-    className: "slideshow"
+    className: "photos"
+  }, _react.default.createElement("div", {
+    className: "container-fluid"
+  }, _react.default.createElement(_reactGridGallery.default, {
+    images: _Gallery.default,
+    enableImageSelection: false,
+    enableLightbox: false
+  })));
+}
+
+var _default = Photos;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/components/Service.js":
+/*!***********************************!*\
+  !*** ./src/components/Service.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+Service.propTypes = {
+  src: _propTypes.default.string.isRequired,
+  name: _propTypes.default.string.isRequired,
+  description: _propTypes.default.string.isRequired
+};
+
+function Service(props) {
+  return _react.default.createElement("div", {
+    className: "col-xs-12 col-lg-4 item-container"
+  }, _react.default.createElement("div", {
+    className: "item"
+  }, _react.default.createElement("div", {
+    className: "image-container"
+  }, _react.default.createElement("img", {
+    className: "image",
+    src: props.src
+  })), _react.default.createElement("div", {
+    className: "info-container"
+  }, _react.default.createElement("h3", {
+    className: "heading-3 name"
+  }, props.name), _react.default.createElement("p", {
+    className: "body-1 description"
+  }, props.description))));
+}
+
+var _default = Service;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/components/Story.js":
+/*!*********************************!*\
+  !*** ./src/components/Story.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Story(props) {
+  return _react.default.createElement("section", {
+    className: "story"
   }, _react.default.createElement("div", {
     className: "container-fluid"
   }, _react.default.createElement("div", {
     className: "container"
-  }, _react.default.createElement(_reactGridGallery.default, {
-    images: _PhotoSet.default,
-    enableImageSelection: false,
-    enableLightbox: false
-  }))));
+  }, _react.default.createElement("div", {
+    className: "story-content"
+  }, _react.default.createElement("h2", {
+    className: "heading-2"
+  }, "Our Story"), _react.default.createElement("p", {
+    className: "body-1"
+  }, "IT STARTED, QUITE SIMPLY, LIKE THIS as a family run business and now we have established ourselves in the market and serve hundreds of delicious chickens!")))));
 }
 
-var _default = SlideShow;
+var _default = Story;
 exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/data/Food.js":
+/*!**************************!*\
+  !*** ./src/data/Food.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var FOOD = [{
+  src: "./assets/ciabatta.jpg",
+  name: "Ciabattas",
+  id: 1
+}, {
+  src: "./assets/box.jpg",
+  name: "Boxes",
+  id: 2
+}, {
+  src: "./assets/roasted-chicken.jpg",
+  name: "Whole Chicken",
+  id: 3
+}];
+var _default = FOOD;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/data/Gallery.js":
+/*!*****************************!*\
+  !*** ./src/data/Gallery.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var GALLERY = [{
+  src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+  thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 174
+}, {
+  src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+  thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 212
+}, {
+  src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+  thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 212
+}, {
+  src: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_b.jpg",
+  thumbnail: "https://c7.staticflickr.com/9/8546/28354329294_bb45ba31fa_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_b.jpg",
+  thumbnail: "https://c6.staticflickr.com/9/8890/28897154101_a8f55be225_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 183
+}, {
+  src: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_b.jpg",
+  thumbnail: "https://c5.staticflickr.com/9/8768/28941110956_b05ab588c1_n.jpg",
+  thumbnailWidth: 240,
+  thumbnailHeight: 320
+}, {
+  src: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_b.jpg",
+  thumbnail: "https://c3.staticflickr.com/9/8583/28354353794_9f2d08d8c0_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 190
+}, {
+  src: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_b.jpg",
+  thumbnail: "https://c7.staticflickr.com/9/8569/28941134686_d57273d933_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 148
+}, {
+  src: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_b.jpg",
+  thumbnail: "https://c6.staticflickr.com/9/8342/28897193381_800db6419e_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_b.jpg",
+  thumbnail: "https://c2.staticflickr.com/9/8239/28897202241_1497bec71a_n.jpg",
+  thumbnailWidth: 248,
+  thumbnailHeight: 320
+}, {
+  src: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_b.jpg",
+  thumbnail: "https://c6.staticflickr.com/9/8520/28357073053_cafcb3da6f_n.jpg",
+  thumbnailWidth: 313,
+  thumbnailHeight: 320
+}, {
+  src: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_b.jpg",
+  thumbnail: "https://c8.staticflickr.com/9/8104/28973555735_ae7c208970_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_b.jpg",
+  thumbnail: "https://c4.staticflickr.com/9/8562/28897228731_ff4447ef5f_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 194
+}, {
+  src: "https://c2.staticflickr.com/8/7577/28973580825_d8f541ba3f_b.jpg",
+  thumbnail: "https://c2.staticflickr.com/8/7577/28973580825_d8f541ba3f_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_b.jpg",
+  thumbnail: "https://c7.staticflickr.com/9/8106/28941228886_86d1450016_n.jpg",
+  thumbnailWidth: 271,
+  thumbnailHeight: 320
+}, {
+  src: "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_b.jpg",
+  thumbnail: "https://c1.staticflickr.com/9/8330/28941240416_71d2a7af8e_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_b.jpg",
+  thumbnail: "https://c1.staticflickr.com/9/8707/28868704912_cba5c6600e_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_b.jpg",
+  thumbnail: "https://c4.staticflickr.com/9/8578/28357117603_97a8233cf5_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_b.jpg",
+  thumbnail: "https://c4.staticflickr.com/8/7476/28973628875_069e938525_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 213
+}, {
+  src: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_b.jpg",
+  thumbnail: "https://c6.staticflickr.com/9/8593/28357129133_f04c73bf1e_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 179
+}, {
+  src: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_b.jpg",
+  thumbnail: "https://c6.staticflickr.com/9/8893/28897116141_641b88e342_n.jpg",
+  thumbnailWidth: 320,
+  thumbnailHeight: 215
+}, {
+  src: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_b.jpg",
+  thumbnail: "https://c1.staticflickr.com/9/8056/28354485944_148d6a5fc1_n.jpg",
+  thumbnailWidth: 257,
+  thumbnailHeight: 320
+}, {
+  src: "https://c7.staticflickr.com/9/8824/28868764222_19f3b30773_b.jpg",
+  thumbnail: "https://c7.staticflickr.com/9/8824/28868764222_19f3b30773_n.jpg",
+  thumbnailWidth: 226,
+  thumbnailHeight: 320
+}];
+var _default = GALLERY;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/data/Service.js":
+/*!*****************************!*\
+  !*** ./src/data/Service.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var SERVICE = [{
+  src: "./assets/utensils.svg",
+  name: "Street Food Market",
+  description: "Find us at STRUTTON GROUND SW1, Tuesday to Friday from noon to 3pm  & at VENN STREET SW4, Saturday from noon to 4pm.",
+  id: 1
+}, {
+  src: "./assets/calendar.svg",
+  name: "Private Catering",
+  description: "Formal or informal, large or small gatherings – the choice is yours. Rotisseries to suit any size of party even our lovely classic Citroen HY van called Serge. Contact us…",
+  id: 2
+}, {
+  src: "./assets/briefcase.svg",
+  name: "Corporate Catering",
+  description: "Formal or informal, large or small gatherings – the choice is yours. Rotisseries to suit any size of party even our lovely classic Citroen HY van called Serge. Contact us…",
+  id: 3
+}];
+var _default = SERVICE;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./src/img/box.jpg":
+/*!*************************!*\
+  !*** ./src/img/box.jpg ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/box.jpg";
+
+/***/ }),
+
+/***/ "./src/img/briefcase.svg":
+/*!*******************************!*\
+  !*** ./src/img/briefcase.svg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/briefcase.svg";
+
+/***/ }),
+
+/***/ "./src/img/calendar.svg":
+/*!******************************!*\
+  !*** ./src/img/calendar.svg ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/calendar.svg";
+
+/***/ }),
+
+/***/ "./src/img/carrot-salad.jpg":
+/*!**********************************!*\
+  !*** ./src/img/carrot-salad.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/carrot-salad.jpg";
 
 /***/ }),
 
@@ -27919,6 +28184,17 @@ module.exports = __webpack_require__.p + "/assets/chicken.svg";
 
 /***/ }),
 
+/***/ "./src/img/ciabatta.jpg":
+/*!******************************!*\
+  !*** ./src/img/ciabatta.jpg ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/ciabatta.jpg";
+
+/***/ }),
+
 /***/ "./src/img/header.jpg":
 /*!****************************!*\
   !*** ./src/img/header.jpg ***!
@@ -27927,6 +28203,17 @@ module.exports = __webpack_require__.p + "/assets/chicken.svg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/assets/header.jpg";
+
+/***/ }),
+
+/***/ "./src/img/roasted-chicken.jpg":
+/*!*************************************!*\
+  !*** ./src/img/roasted-chicken.jpg ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/roasted-chicken.jpg";
 
 /***/ }),
 
@@ -27941,6 +28228,17 @@ module.exports = __webpack_require__.p + "/assets/rooster.jpg";
 
 /***/ }),
 
+/***/ "./src/img/sauces.jpg":
+/*!****************************!*\
+  !*** ./src/img/sauces.jpg ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/sauces.jpg";
+
+/***/ }),
+
 /***/ "./src/img/therotisserieco-logo.jpg":
 /*!******************************************!*\
   !*** ./src/img/therotisserieco-logo.jpg ***!
@@ -27949,6 +28247,17 @@ module.exports = __webpack_require__.p + "/assets/rooster.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/assets/therotisserieco-logo.jpg";
+
+/***/ }),
+
+/***/ "./src/img/utensils.svg":
+/*!******************************!*\
+  !*** ./src/img/utensils.svg ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/utensils.svg";
 
 /***/ }),
 
@@ -27976,9 +28285,34 @@ var _rooster = _interopRequireDefault(__webpack_require__(/*! ./img/rooster.jpg 
 
 var _chicken = _interopRequireDefault(__webpack_require__(/*! ./img/chicken.svg */ "./src/img/chicken.svg"));
 
+var _box = _interopRequireDefault(__webpack_require__(/*! ./img/box.jpg */ "./src/img/box.jpg"));
+
+var _ciabatta = _interopRequireDefault(__webpack_require__(/*! ./img/ciabatta.jpg */ "./src/img/ciabatta.jpg"));
+
+var _roastedChicken = _interopRequireDefault(__webpack_require__(/*! ./img/roasted-chicken.jpg */ "./src/img/roasted-chicken.jpg"));
+
+var _carrotSalad = _interopRequireDefault(__webpack_require__(/*! ./img/carrot-salad.jpg */ "./src/img/carrot-salad.jpg"));
+
+var _utensils = _interopRequireDefault(__webpack_require__(/*! ./img/utensils.svg */ "./src/img/utensils.svg"));
+
+var _calendar = _interopRequireDefault(__webpack_require__(/*! ./img/calendar.svg */ "./src/img/calendar.svg"));
+
+var _briefcase = _interopRequireDefault(__webpack_require__(/*! ./img/briefcase.svg */ "./src/img/briefcase.svg"));
+
+var _sauces = _interopRequireDefault(__webpack_require__(/*! ./img/sauces.jpg */ "./src/img/sauces.jpg"));
+
+var _Food = _interopRequireDefault(__webpack_require__(/*! ./data/Food */ "./src/data/Food.js"));
+
+var _Service = _interopRequireDefault(__webpack_require__(/*! ./data/Service */ "./src/data/Service.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render(_react.default.createElement(_App.default, null), document.getElementById('app'));
+// Images
+// Data
+_reactDom.default.render(_react.default.createElement(_App.default, {
+  initialFood: _Food.default,
+  initialServices: _Service.default
+}), document.getElementById('app'));
 
 /***/ }),
 
