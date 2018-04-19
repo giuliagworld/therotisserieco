@@ -1224,13 +1224,14 @@ body {
       padding-left: 20px;
       background-repeat: no-repeat;
       background-position: left;
-      background-size: 16px;
+      background-size: 20px;
       font-size: 16px;
       font-weight: 400; }
       .bm-item-list .menu-item.contact.email {
-        background-image: url("/therotisserieco/assets/envelope.svg"); }
+        clear: both;
+        background-image: url("/assets/envelope.svg"); }
       .bm-item-list .menu-item.contact.phone {
-        background-image: url("/therotisserieco/assets/phone.svg"); }
+        background-image: url("/assets/phone.svg"); }
     .bm-item-list .menu-item.social {
       text-align: center;
       float: left;
