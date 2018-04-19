@@ -1165,7 +1165,7 @@ body {
   width: 100%;
   height: 62px;
   background-color: rgba(0, 0, 0, 0.6);
-  background-image: url("/assets/logo.svg");
+  background-image: url("/therotisserieco/assets/logo.svg");
   background-repeat: no-repeat;
   background-size: 52px;
   background-position: left 10px center; }
@@ -1229,7 +1229,7 @@ body {
   height: 100vh;
   padding-top: 62px;
   padding-bottom: 62px;
-  background-image: url("/assets/header.jpg");
+  background-image: url("/therotisserieco/assets/header.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   color: white; }
@@ -1278,7 +1278,7 @@ body {
   text-align: left; }
   .story .container-fluid {
     position: relative;
-    background-image: url("/assets/sauces.jpg");
+    background-image: url("/therotisserieco/assets/sauces.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -1359,9 +1359,9 @@ body {
       text-decoration: none;
       color: white; }
       .contact .contact-container .contact-details.email {
-        background-image: url("/assets/envelope.svg"); }
+        background-image: url("/therotisserieco/assets/envelope.svg"); }
       .contact .contact-container .contact-details.phone {
-        background-image: url("/assets/phone.svg"); }
+        background-image: url("/therotisserieco/assets/phone.svg"); }
   @media (min-width: 768px) {
     .contact .social-container {
       margin-top: 45px; } }
