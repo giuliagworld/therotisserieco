@@ -9,6 +9,7 @@
   color: $white;
   @include media-breakpoint-up(md) {
     padding-top: 102px;
+    max-height: 995px;
     background-size: cover;
   }
   .container-fluid {

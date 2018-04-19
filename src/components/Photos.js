@@ -4,7 +4,7 @@ import GALLERY from '../data/Gallery';
 
 function Photos(props) {
   return (
-    <section className="photos">
+    <section id="photos" className="photos">
       <div className="container-fluid">
         {/* <div className="container"> */}
           <Gallery images={GALLERY} enableImageSelection={false} enableLightbox={false} />

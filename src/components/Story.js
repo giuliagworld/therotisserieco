@@ -2,7 +2,7 @@ import React from 'react';
 
 function Story(props) {
   return (
-    <section className="story">
+    <section id="story" className="story">
       <div className="container-fluid">
         <div className="container">
           <div className="story-content">

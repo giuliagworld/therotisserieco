@@ -1,7 +1,10 @@
 .contact {
   clear: both;
   width: 100%;
-  overflow: auto;
+  &.z-index-helper {
+    position: relative;
+    z-index: -1;
+  }
   .container-fluid {
     padding: 100px 0;
     background-color: $dark-grey;

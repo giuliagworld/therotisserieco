@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header(props) {
   return (
-    <section className="header">
+    <section id="home" className="header">
       <div className="container-fluid">
         <div className="container">
           <h1 className="heading-1">The Rotisserie Company</h1>

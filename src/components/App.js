@@ -11,6 +11,10 @@ import Photos from './Photos';
 import Contact from './Contact';
 import Footer from './Footer';
 
+var isMenuOpen = function (state) {
+  return state.isOpen;
+};
+
 const App = createReactClass({
   propTypes: {
     initialFood: PropTypes.arrayOf(PropTypes.shape({
@@ -23,31 +27,47 @@ const App = createReactClass({
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired
-    })).isRequired
+    })).isRequired,
   },
   showSettings(event) {
     event.preventDefault();
   },
   getInitialState: function () {
     return {
+      menuOpen: false,
       menu: this.props.initialFood,
       services: this.props.initialServices
     }
+  },
+  // toggle custom class when menu gets opened/closed
+  handleStateChange(state) {
+    this.setState({ menuOpen: state.isOpen })
+    if (this.state.menuOpen) {
+      document.getElementById("contact").classList.remove("z-index-helper");
+    }
+    else {
+      document.getElementById("contact").classList.add("z-index-helper");
+    }
+  },
+  // close menu when clicking on any links in the menu
+  closeMenu() {
+    this.setState({ menuOpen: false })
   },
   render: function() {
     return (
       <div>
         <div className="nav-container">
-          <Nav right>
-            <a id="home" className="menu-item link-default" href="/">Home</a>
-            <a id="food" className="menu-item link-default" href="/food">Food</a>
-            <a id="services" className="menu-item link-default" href="/services">Services</a>
-            <a id="photos" className="menu-item link-default" href="/photos">Photos</a>
-            <a id="contact" className="menu-item link-default" href="/contact">Contact</a>
+          <Nav right isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
+            <a className="menu-item link-default" href="#home" onClick={() => this.closeMenu()}>Home</a>
+            <a className="menu-item link-default" href="#food" onClick={() => this.closeMenu()}>Food</a>
+            <a className="menu-item link-default" href="#story" onClick={() => this.closeMenu()}>Story</a>
+            <a className="menu-item link-default" href="#services" onClick={() => this.closeMenu()}>Services</a>
+            <a className="menu-item link-default" href="#photos" onClick={() => this.closeMenu()}>Photos</a>
+            <a className="menu-item link-default" href="#contact" onClick={() => this.closeMenu()}>Contact</a>
           </Nav>
         </div>
         <Header />
-        <section className="food">
+        <section id="food" className="food">
           <div className="container-fluid">
             <div className="container">
               <h2 className="heading-2">Our Food</h2>
@@ -62,7 +82,7 @@ const App = createReactClass({
           </div>
         </section>
         <Story />
-        <section className="services">
+        <section id="services" className="services">
           <div className="container-fluid">
             <div className="container">
               <h2 className="heading-2">Our Services</h2>

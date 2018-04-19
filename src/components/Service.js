@@ -16,7 +16,7 @@ function Service(props) {
         </div>
         <div className="info-container">
           <h3 className="heading-3 name">{props.name}</h3>
-          <p className="body-1 description">{props.description}</p>
+          <p className="body-3 description">{props.description}</p>
         </div>
       </div>
     </div>

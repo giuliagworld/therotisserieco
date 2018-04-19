@@ -5,9 +5,9 @@ import App from './components/App';
 
 // Images
 import HeaderImg from './img/header.jpg';
-import Logo from './img/therotisserieco-logo.jpg';
-import Rooster from './img/rooster.jpg';
-import Chicken from './img/chicken.svg';
+import LogoSVG from './img/logo.svg';
+import LogoPNG from './img/logo.png';
+import LogoFullPNG from './img/logo-full.jpg';
 import Box from './img/box.jpg';
 import Ciabatta from './img/ciabatta.jpg';
 import RoastedChicken from './img/roasted-chicken.jpg';
@@ -21,6 +21,8 @@ import Phone from './img/phone.svg';
 import Facebook from './img/facebook.svg';
 import Twitter from './img/twitter.svg';
 import Instagram from './img/instagram.svg';
+
+
 
 
 

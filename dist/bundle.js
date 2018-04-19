@@ -27584,6 +27584,10 @@ var _Footer = _interopRequireDefault(__webpack_require__(/*! ./Footer */ "./src/
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var isMenuOpen = function isMenuOpen(state) {
+  return state.isOpen;
+};
+
 var App = (0, _createReactClass.default)({
   displayName: "App",
   propTypes: {
@@ -27604,36 +27608,78 @@ var App = (0, _createReactClass.default)({
   },
   getInitialState: function getInitialState() {
     return {
+      menuOpen: false,
       menu: this.props.initialFood,
       services: this.props.initialServices
     };
   },
+  // toggle custom class when menu gets opened/closed
+  handleStateChange: function handleStateChange(state) {
+    this.setState({
+      menuOpen: state.isOpen
+    });
+
+    if (this.state.menuOpen) {
+      document.getElementById("contact").classList.remove("z-index-helper");
+    } else {
+      document.getElementById("contact").classList.add("z-index-helper");
+    }
+  },
+  // close menu when clicking on any links in the menu
+  closeMenu: function closeMenu() {
+    this.setState({
+      menuOpen: false
+    });
+  },
   render: function render() {
+    var _this = this;
+
     return _react.default.createElement("div", null, _react.default.createElement("div", {
       className: "nav-container"
     }, _react.default.createElement(_slide.default, {
-      right: true
+      right: true,
+      isOpen: this.state.menuOpen,
+      onStateChange: function onStateChange(state) {
+        return _this.handleStateChange(state);
+      }
     }, _react.default.createElement("a", {
-      id: "home",
       className: "menu-item link-default",
-      href: "/"
+      href: "#home",
+      onClick: function onClick() {
+        return _this.closeMenu();
+      }
     }, "Home"), _react.default.createElement("a", {
-      id: "food",
       className: "menu-item link-default",
-      href: "/food"
+      href: "#food",
+      onClick: function onClick() {
+        return _this.closeMenu();
+      }
     }, "Food"), _react.default.createElement("a", {
-      id: "services",
       className: "menu-item link-default",
-      href: "/services"
+      href: "#story",
+      onClick: function onClick() {
+        return _this.closeMenu();
+      }
+    }, "Story"), _react.default.createElement("a", {
+      className: "menu-item link-default",
+      href: "#services",
+      onClick: function onClick() {
+        return _this.closeMenu();
+      }
     }, "Services"), _react.default.createElement("a", {
-      id: "photos",
       className: "menu-item link-default",
-      href: "/photos"
+      href: "#photos",
+      onClick: function onClick() {
+        return _this.closeMenu();
+      }
     }, "Photos"), _react.default.createElement("a", {
-      id: "contact",
       className: "menu-item link-default",
-      href: "/contact"
+      href: "#contact",
+      onClick: function onClick() {
+        return _this.closeMenu();
+      }
     }, "Contact"))), _react.default.createElement(_Header.default, null), _react.default.createElement("section", {
+      id: "food",
       className: "food"
     }, _react.default.createElement("div", {
       className: "container-fluid"
@@ -27650,6 +27696,7 @@ var App = (0, _createReactClass.default)({
         key: food.id
       });
     }.bind(this)))))), _react.default.createElement(_Story.default, null), _react.default.createElement("section", {
+      id: "services",
       className: "services"
     }, _react.default.createElement("div", {
       className: "container-fluid"
@@ -27695,6 +27742,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Contact(props) {
   return _react.default.createElement("section", {
+    id: "contact",
     className: "contact"
   }, _react.default.createElement("div", {
     className: "container-fluid"
@@ -27845,6 +27893,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Header(props) {
   return _react.default.createElement("section", {
+    id: "home",
     className: "header"
   }, _react.default.createElement("div", {
     className: "container-fluid"
@@ -27887,6 +27936,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Photos(props) {
   return _react.default.createElement("section", {
+    id: "photos",
     className: "photos"
   }, _react.default.createElement("div", {
     className: "container-fluid"
@@ -27944,7 +27994,7 @@ function Service(props) {
   }, _react.default.createElement("h3", {
     className: "heading-3 name"
   }, props.name), _react.default.createElement("p", {
-    className: "body-1 description"
+    className: "body-3 description"
   }, props.description))));
 }
 
@@ -27974,6 +28024,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function Story(props) {
   return _react.default.createElement("section", {
+    id: "story",
     className: "story"
   }, _react.default.createElement("div", {
     className: "container-fluid"
@@ -28239,17 +28290,6 @@ module.exports = __webpack_require__.p + "/assets/carrot-salad.jpg";
 
 /***/ }),
 
-/***/ "./src/img/chicken.svg":
-/*!*****************************!*\
-  !*** ./src/img/chicken.svg ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/chicken.svg";
-
-/***/ }),
-
 /***/ "./src/img/ciabatta.jpg":
 /*!******************************!*\
   !*** ./src/img/ciabatta.jpg ***!
@@ -28305,6 +28345,39 @@ module.exports = __webpack_require__.p + "/assets/instagram.svg";
 
 /***/ }),
 
+/***/ "./src/img/logo-full.jpg":
+/*!*******************************!*\
+  !*** ./src/img/logo-full.jpg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/logo-full.jpg";
+
+/***/ }),
+
+/***/ "./src/img/logo.png":
+/*!**************************!*\
+  !*** ./src/img/logo.png ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/logo.png";
+
+/***/ }),
+
+/***/ "./src/img/logo.svg":
+/*!**************************!*\
+  !*** ./src/img/logo.svg ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/assets/logo.svg";
+
+/***/ }),
+
 /***/ "./src/img/phone.svg":
 /*!***************************!*\
   !*** ./src/img/phone.svg ***!
@@ -28327,17 +28400,6 @@ module.exports = __webpack_require__.p + "/assets/roasted-chicken.jpg";
 
 /***/ }),
 
-/***/ "./src/img/rooster.jpg":
-/*!*****************************!*\
-  !*** ./src/img/rooster.jpg ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/rooster.jpg";
-
-/***/ }),
-
 /***/ "./src/img/sauces.jpg":
 /*!****************************!*\
   !*** ./src/img/sauces.jpg ***!
@@ -28346,17 +28408,6 @@ module.exports = __webpack_require__.p + "/assets/rooster.jpg";
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "/assets/sauces.jpg";
-
-/***/ }),
-
-/***/ "./src/img/therotisserieco-logo.jpg":
-/*!******************************************!*\
-  !*** ./src/img/therotisserieco-logo.jpg ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "/assets/therotisserieco-logo.jpg";
 
 /***/ }),
 
@@ -28400,11 +28451,11 @@ var _App = _interopRequireDefault(__webpack_require__(/*! ./components/App */ ".
 
 var _header = _interopRequireDefault(__webpack_require__(/*! ./img/header.jpg */ "./src/img/header.jpg"));
 
-var _therotisseriecoLogo = _interopRequireDefault(__webpack_require__(/*! ./img/therotisserieco-logo.jpg */ "./src/img/therotisserieco-logo.jpg"));
+var _logo = _interopRequireDefault(__webpack_require__(/*! ./img/logo.svg */ "./src/img/logo.svg"));
 
-var _rooster = _interopRequireDefault(__webpack_require__(/*! ./img/rooster.jpg */ "./src/img/rooster.jpg"));
+var _logo2 = _interopRequireDefault(__webpack_require__(/*! ./img/logo.png */ "./src/img/logo.png"));
 
-var _chicken = _interopRequireDefault(__webpack_require__(/*! ./img/chicken.svg */ "./src/img/chicken.svg"));
+var _logoFull = _interopRequireDefault(__webpack_require__(/*! ./img/logo-full.jpg */ "./src/img/logo-full.jpg"));
 
 var _box = _interopRequireDefault(__webpack_require__(/*! ./img/box.jpg */ "./src/img/box.jpg"));
 
