@@ -29177,11 +29177,11 @@ var App = (0, _createReactClass.default)({
       className: "menu-item contact email",
       role: "button",
       href: "mailto:kim@therotisserieco.com"
-    }, "kim@therotisserieco.com"), _react.default.createElement("br", null), _react.default.createElement("a", {
+    }, "kim@therotisserieco.com"), _react.default.createElement("a", {
       className: "menu-item contact phone",
       role: "button",
       href: "tel:+441234567890"
-    }, "01234567890"), _react.default.createElement("br", null))), _react.default.createElement(_Header.default, null), _react.default.createElement("section", {
+    }, "01234567890"))), _react.default.createElement(_Header.default, null), _react.default.createElement("section", {
       id: "food",
       className: "food"
     }, _react.default.createElement("div", {
