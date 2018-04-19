@@ -8,12 +8,10 @@ import Food from './Food';
 import Story from './Story';
 import Service from './Service';
 import Photos from './Photos';
-import Contact from './Contact';
 import Footer from './Footer';
 
-var isMenuOpen = function (state) {
-  return state.isOpen;
-};
+import { SocialIcon } from 'react-social-icons';
+
 
 const App = createReactClass({
   propTypes: {
@@ -39,17 +37,12 @@ const App = createReactClass({
       services: this.props.initialServices
     }
   },
-  // toggle custom class when menu gets opened/closed
+  // This keeps your state in sync with the opening/closing of the menu
+  // via the default means, e.g. clicking the X, pressing the ESC key etc.
   handleStateChange(state) {
     this.setState({ menuOpen: state.isOpen })
-    if (this.state.menuOpen) {
-      document.getElementById("contact").classList.remove("z-index-helper");
-    }
-    else {
-      document.getElementById("contact").classList.add("z-index-helper");
-    }
   },
-  // close menu when clicking on any links in the menu
+  // close menu when clicking on any link in the menu
   closeMenu() {
     this.setState({ menuOpen: false })
   },
@@ -58,12 +51,16 @@ const App = createReactClass({
       <div>
         <div className="nav-container">
           <Nav right isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)}>
-            <a className="menu-item link-default" href="#home" onClick={() => this.closeMenu()}>Home</a>
-            <a className="menu-item link-default" href="#food" onClick={() => this.closeMenu()}>Food</a>
-            <a className="menu-item link-default" href="#story" onClick={() => this.closeMenu()}>Story</a>
-            <a className="menu-item link-default" href="#services" onClick={() => this.closeMenu()}>Services</a>
-            <a className="menu-item link-default" href="#photos" onClick={() => this.closeMenu()}>Photos</a>
-            <a className="menu-item link-default" href="#contact" onClick={() => this.closeMenu()}>Contact</a>
+            <a className="menu-item" href="#home" onClick={() => this.closeMenu()}>Home</a>
+            <a className="menu-item" href="#food" onClick={() => this.closeMenu()}>Food</a>
+            <a className="menu-item" href="#story" onClick={() => this.closeMenu()}>Story</a>
+            <a className="menu-item" href="#services" onClick={() => this.closeMenu()}>Services</a>
+            <a className="menu-item" href="#photos" onClick={() => this.closeMenu()}>Photos</a>
+            <SocialIcon className="menu-item social" url="https://www.facebook.com/" color="white" />
+            <SocialIcon className="menu-item social" url="https://www.twitter.com/" color="white" />
+            <SocialIcon className="menu-item social" url="https://www.instagram.com/" color="white" />
+            <a className="menu-item contact email" role="button" href="mailto:kim@therotisserieco.com">kim@therotisserieco.com</a><br />
+            <a className="menu-item contact phone" role="button" href="tel:+441234567890">01234567890</a><br />
           </Nav>
         </div>
         <Header />
@@ -97,7 +94,6 @@ const App = createReactClass({
           </div>
         </section>
         <Photos />
-        <Contact />
         <Footer />
       </div>
     )

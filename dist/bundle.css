@@ -1203,7 +1203,7 @@ body {
 /* General sidebar styles */
 .bm-menu {
   background: #373a47;
-  padding: 2.5em 1.5em 0;
+  padding: 2.5em 1em 0;
   font-size: 1.30em; }
 
 /* Morph shape necessary with bubble or elastic */
@@ -1215,10 +1215,26 @@ body {
   color: #b8b7ad;
   padding: 0.8em; }
   .bm-item-list .menu-item {
-    padding: 15px 0;
+    padding: 10px 0;
     text-align: center;
     font-weight: 600;
-    color: white; }
+    color: white;
+    text-decoration: none; }
+    .bm-item-list .menu-item.contact {
+      padding-left: 20px;
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: 16px;
+      font-size: 16px;
+      font-weight: 400; }
+      .bm-item-list .menu-item.contact.email {
+        background-image: url("/therotisserieco/assets/envelope.svg"); }
+      .bm-item-list .menu-item.contact.phone {
+        background-image: url("/therotisserieco/assets/phone.svg"); }
+    .bm-item-list .menu-item.social {
+      text-align: center;
+      float: left;
+      margin: 40px 12px 40px; }
 
 /* Styling of overlay */
 .bm-overlay {
@@ -1341,51 +1357,10 @@ body {
 .photos {
   width: 100%; }
 
-.contact {
+.footer {
   clear: both;
   width: 100%; }
-  .contact.z-index-helper {
-    position: relative;
-    z-index: -1; }
-  .contact .container-fluid {
-    padding: 100px 0;
-    background-color: #242323;
-    color: white; }
-  .contact .contact-container {
-    margin-top: 15px; }
-    @media (min-width: 768px) {
-      .contact .contact-container {
-        margin-top: 40px; } }
-    .contact .contact-container .contact-details {
-      display: inline-block;
-      padding: 10px 0 10px 40px;
-      background-repeat: no-repeat;
-      background-position: left;
-      background-size: 30px;
-      font-size: 22px;
-      text-decoration: none;
-      color: white; }
-      .contact .contact-container .contact-details.email {
-        background-image: url("/therotisserieco/assets/envelope.svg"); }
-      .contact .contact-container .contact-details.phone {
-        background-image: url("/therotisserieco/assets/phone.svg"); }
-  @media (min-width: 768px) {
-    .contact .social-container {
-      margin-top: 45px; } }
-  .contact .social-container .social {
-    display: inline-block;
-    padding-top: 40px; }
-    @media (min-width: 768px) {
-      .contact .social-container .social {
-        padding-top: 15px; } }
-    .contact .social-container .social .icon {
-      margin: 0 10px;
-      width: 60px;
-      height: auto; }
-
-.footer {
-  width: 100%; }
   .footer .container-fluid {
-    background-color: #242323; }
+    background-color: #373a47; }
 
 /*# sourceMappingURL=bundle.css.map*/
