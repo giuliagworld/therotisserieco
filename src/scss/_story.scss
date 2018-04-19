@@ -10,6 +10,9 @@
     background-position: center;
     height: 500px;
     z-index: -1;
+    @media only screen and (max-device-width: 1024px) {
+      background-attachment: scroll;
+    }
     @include media-breakpoint-up(md) {
       height: 500px;
     }
@@ -24,6 +27,10 @@
     padding: 30px;
     background-color: $white;
     color: $black;
+    @media only screen and (max-device-width: 1024px) {
+      background-color: $black-overlay;
+      color: $white;
+    }
     @include media-breakpoint-up(md) {
       left: 100px;
       width: 568px;
