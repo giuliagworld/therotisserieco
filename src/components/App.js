@@ -59,7 +59,7 @@ const App = createReactClass({
             <SocialIcon className="menu-item social" url="https://www.facebook.com/" color="white" />
             <SocialIcon className="menu-item social" url="https://www.twitter.com/" color="white" />
             <SocialIcon className="menu-item social" url="https://www.instagram.com/" color="white" />
-            <a className="menu-item contact email" role="button" href="mailto:kim@therotisserieco.com">kim@therotisserieco.com</a>
+            <a className="menu-item contact email" role="button" href="mailto:test@test.com">test@test.com</a>
             <a className="menu-item contact phone" role="button" href="tel:+441234567890">01234567890</a>
           </Nav>
         </div>

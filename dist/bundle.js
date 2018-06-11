@@ -29176,8 +29176,8 @@ var App = (0, _createReactClass.default)({
     }), _react.default.createElement("a", {
       className: "menu-item contact email",
       role: "button",
-      href: "mailto:kim@therotisserieco.com"
-    }, "kim@therotisserieco.com"), _react.default.createElement("a", {
+      href: "mailto:test@test.com"
+    }, "test@test.com"), _react.default.createElement("a", {
       className: "menu-item contact phone",
       role: "button",
       href: "tel:+441234567890"
