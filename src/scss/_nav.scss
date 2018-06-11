@@ -5,7 +5,7 @@
   width: 100%;
   height: 62px;
   background-color: $black-overlay;
-  background-image: url("../../dist/assets/logo.svg");
+  background-image: url("/therotisserieco/assets/logo.svg");
   // background-image: url("/assets/logo.svg"); // for prod
   background-repeat: no-repeat;
   background-size: 52px;
@@ -77,11 +77,11 @@
       font-weight: 400;
       &.email {
         clear: both;
-        background-image: url("../../dist/assets/envelope.svg");
+        background-image: url("/therotisserieco/assets/envelope.svg");
         // background-image: url("/assets/envelope.svg"); // for prod
       }
       &.phone {
-        background-image: url("../../dist/assets/phone.svg");
+        background-image: url("/therotisserieco/assets/phone.svg");
         // background-image: url("/assets/phone.svg"); // for prod
       }
     }
